@@ -1,0 +1,20 @@
+#Docker Commands List
+
+#Parameters
+--no-cache 
+--memory="256m" 
+--memory-swap="256m" 
+--cpus="0.5"
+-d #Running Container in Background 
+-p #Running Container in terminal
+
+#Basic CMD
+docker help
+docker -version
+
+#Image
+docker build -t <ApplicationName> .
+
+#Container
+docker ps
+docker run -d -p 8080:8080 --memory="256m" --memory-swap="256m" --cpus="0.5" <ApplicationName> .

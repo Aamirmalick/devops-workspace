@@ -1,0 +1,23 @@
+#!/bin/bash
+# entrypoint.sh
+
+# JVM options
+# Set the initial and maximum heap size (adjust as needed)
+JAVA_OPTS="-Xms128m -Xmx256m"
+
+# Set the maximum RAM percentage for the JVM (adjust as needed)
+JAVA_OPTS="$JAVA_OPTS -XX:MaxRAMPercentage=75.0"
+
+# Garbage collector configuration
+# Using G1 Garbage Collector
+JAVA_OPTS="$JAVA_OPTS -XX:+UseG1GC -XX:MaxGCPauseMillis=200"
+
+# Optionally, you can use the Z Garbage Collector instead of G1GC (ZGC is available starting from JDK 11)
+# JAVA_OPTS="$JAVA_OPTS -XX:+UseZGC"
+
+# GC logging options
+JAVA_OPTS="$JAVA_OPTS -Xlog:gc*:file=/app/logs/gc.log:time,uptime,level,tags:filecount=5,filesize=10M"
+
+echo "Starting Spring Boot Application with JVM options: $JAVA_OPTS"
+# Run the Spring Boot application with the specified JVM options
+java $JAVA_OPTS -jar /app/my-spring-boot-app.jar

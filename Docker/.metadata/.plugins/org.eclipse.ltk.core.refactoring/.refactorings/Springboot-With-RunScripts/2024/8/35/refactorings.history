@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;start.sh&apos; to &apos;Springboot-With-RunScripts&apos;&#x0D;&#x0A;- Original project: &apos;Springboot-With-RunScripts&apos;&#x0D;&#x0A;- Destination element: &apos;Springboot-With-RunScripts&apos;&#x0D;&#x0A;- Original element: &apos;start.sh&apos;" description="Copy file" destination="=Springboot-With-RunScripts" element1="deploy/start.sh" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1725118867558" units="0" version="1.0"/>
+</session>

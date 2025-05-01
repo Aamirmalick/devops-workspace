@@ -1,0 +1,20 @@
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the entrypoint.sh script to the container
+#COPY deploy/start.sh /app/start.sh
+
+# Make the entrypoint.sh script executable
+#RUN chmod +x /app/start.sh
+
+# Copy the Spring Boot JAR file from the target directory to the container
+COPY target/Springboot-With-RunScripts-0.0.1-SNAPSHOT.jar /app/my-spring-boot-app.jar
+
+# Expose the port the app runs on
+EXPOSE 8080
+
+# Set the entry point to the entrypoint.sh script
+ENTRYPOINT ["/app/start.sh"]
